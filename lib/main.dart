@@ -1,7 +1,8 @@
-import 'widget/all_confetti_widget.dart';
 import 'package:flutter/material.dart';
+import 'widget/all_confetti_widget.dart';
+import 'widget/glass.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   final String title = 'Confetti Widget';
@@ -30,15 +31,69 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFf6a192),
         body: Stack(
           children: [
             AllConfettiWidget(key: UniqueKey(), child: Container()),
-            const Center(
-              child: Text(
-                "You're invited to our wedding!! 🥳",
-                style: TextStyle(fontSize: 28, color: Colors.black),
-                textAlign: TextAlign.center,
+            Center(
+              child: GlassMorphism(
+                start: 0.6,
+                end: 0.45,
+                child: Padding(
+                  padding: const EdgeInsets.all(50),
+                  child: IntrinsicHeight(
+                    child: Column(
+                      children: [
+                        const Text(
+                          "You're invited to our wedding!!! 🥳",
+                          style: TextStyle(fontSize: 23, color: Colors.black),
+                          textAlign: TextAlign.center,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20, bottom: 10),
+                          child: Text(
+                            'Couples',
+                            style: TextStyle(
+                                fontSize: 23, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 300,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                '🤵🏾‍♂️',
+                                style: TextStyle(fontSize: 28),
+                              ),
+                              Text(
+                                'John Okon Asuquo',
+                                style: TextStyle(fontSize: 28),
+                              )
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 25),
+                        SizedBox(
+                          width: 300,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                '👰🏾‍♀️',
+                                style: TextStyle(fontSize: 28),
+                              ),
+                              Text(
+                                'Emma Henry Ekpo',
+                                style: TextStyle(fontSize: 28),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
