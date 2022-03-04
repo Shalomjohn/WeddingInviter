@@ -70,7 +70,7 @@ class _AllConfettiWidgetState extends State<AllConfettiWidget> {
           emissionFrequency: 0.05,
           numberOfParticles: 5,
           gravity: 0.0,
-          maxBlastForce: 55,
+          maxBlastForce: 300,
           minBlastForce: 1,
           particleDrag: 0.1,
         ),
